@@ -19,7 +19,7 @@
             
         </div>
         <div id="load-button">
-            <button>LOAD MORE</button>
+            <a href="{{route('comics.create')}}"><button>Add a Comic</button></a>
         </div>
     </main>
 @endsection
