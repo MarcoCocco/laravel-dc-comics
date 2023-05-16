@@ -20,7 +20,7 @@
 @include('partials/navbar')
 @yield('jumbo')
 
-@yield('detailsContent')
+@yield('content')
 
 @yield('mainContent')
 @yield('merchLinks')
