@@ -24,11 +24,11 @@
             <div class="left">
                 <div class="artists">
                     <p>Art by:</p>
-                    <p>Blabla</p>
+                    <p>{{ $comic->artists }}</p>
                 </div>
                 <div class="writers">
                     <p>Written by:</p>
-                    <p>blablas</p>
+                    <p>{{ $comic->writers }}</p>
                 </div>
             </div>
             <div class="right">
