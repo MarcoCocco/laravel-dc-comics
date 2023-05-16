@@ -6,7 +6,7 @@
               </div>
               <div class="links">
                   <ul>
-                      @foreach ($navLinks as $link)
+                      @foreach (config('config.navLinks') as $link)
                           <li><strong>{{ $link }}</strong></li>
                       @endforeach
                   </ul>

@@ -12,7 +12,7 @@
                 <div id="card">
                     <img src="{{ $comic['thumb'] }}" alt="">
                     <div id="series">
-                        <a href="{{ route('details') }}?index={{ $loop->index }}"><p>{{ $comic['series'] }}</p></a>
+                        <a href="#"><p>{{ $comic['series'] }}</p></a>
                     </div>
                 </div>
             @endforeach
@@ -29,7 +29,7 @@
         <div class="main-container container">
             <div class="main-links">
                 <ul>
-                    @foreach ($mainLinks as $mainLink)
+                    @foreach (config('config.mainLinks') as $mainLink)
                         <li><img src="{{ Vite::asset($mainLink['image']) }}" alt="">{{ $mainLink['name'] }}</li>
                     @endforeach
                 </ul>

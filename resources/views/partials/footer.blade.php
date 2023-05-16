@@ -2,7 +2,7 @@
     <div class="footer-container">
         <div class="footer-up container">
             <div class="footer-links">
-                @foreach ($footerColumns as $item)
+                @foreach (config('config.footerColumns') as $item)
                     <strong>{{ $item['title'] }}</strong>
                     <ul>
                         @foreach ($item['links'] as $link)
@@ -20,7 +20,7 @@
         <div class="socials">
             <h3>FOLLOW US</h3>
             <ul>
-                @foreach ($socials as $social)
+                @foreach (config('config.socials') as $social)
                 <li>
                     <img src="{{ Vite::asset($social) }}" alt="">
                 </li>
