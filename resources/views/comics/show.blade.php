@@ -55,7 +55,7 @@
                 @csrf
                 @method('DELETE')
 
-                <button class="btn btn-danger" type="submit">Cancella</button>
+                <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
             </form>
             <p><a href="{{ route('home') }}">Torna alla Homepage</a></p>
         </div>
