@@ -13,7 +13,7 @@
     </div>
     <div class="info-container">
         <div class="comic-info container">
-            <h2>{{ $comic->title }}</h2>
+            <h2>{{ $comic->title }}</h2><a href="{{ route('comics.edit', $comic->id) }}"><i class="fa-solid fa-pencil"></i></a>
             <div class="available">
                 <p>U.S. Price: <strong>{{ $comic->price }}</strong></p>
                 <p>Available</p>
