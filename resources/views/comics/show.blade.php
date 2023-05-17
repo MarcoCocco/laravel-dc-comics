@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="home container">
-            <form class="mb-4" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+            <form class="mb-4" onclick="deleteConfirm()" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
 
@@ -60,4 +60,19 @@
             <p><a href="{{ route('home') }}">Torna alla Homepage</a></p>
         </div>
     </div>
+
+    <script>
+        function deleteConfirm() {
+
+            //Utilizzo una condizione che mi permette di controllare il valore (booleano) della funzione "confirm"
+            //in base a cosa deciderà l'utente quando apparirà la finestra di conferma data dalla funzione stessa
+            if (confirm("Vuoi cancellare questo fumetto?")) {
+
+                //Se la conferma è positiva, utilizzo questa sintassi, per reindirizzare la pagina corrente 
+                //ad una determinata route specificata tramite la sintassi di Blade
+                //in questo caso quella per la cancellazione del dato
+                window.location.href = "{{ route('comics.destroy', $comic->id) }}";
+            }
+        }
+    </script>
 @endsection
