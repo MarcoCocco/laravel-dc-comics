@@ -9,12 +9,13 @@
     <div class="background">
         <div class='image-detail container'>
             <img src="{{ $comic->thumb }}" alt="">
-            
+
         </div>
     </div>
     <div class="info-container">
         <div class="comic-info container">
-            <h2>{{ $comic->title }} <a href="{{ route('comics.edit', $comic->id) }}"><i class="fa-solid fa-pencil"></i></a></h2>
+            <h2>{{ $comic->title }} <a href="{{ route('comics.edit', $comic->id) }}"><i class="fa-solid fa-pencil"></i></a>
+            </h2>
             <div class="available">
                 <p>U.S. Price: <strong>{{ $comic->price }}</strong></p>
                 <p>Available</p>
@@ -50,6 +51,12 @@
             </div>
         </div>
         <div class="home container">
+            <form class="mb-4" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+
+                <button class="btn btn-danger" type="submit">Cancella</button>
+            </form>
             <p><a href="{{ route('home') }}">Torna alla Homepage</a></p>
         </div>
     </div>
