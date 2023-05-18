@@ -127,6 +127,14 @@ class ComicController extends Controller
             'title.required' => 'Inserisci un titolo.',
             'title.max' => 'Il titolo non deve essere più lungo di 150 caratteri.',
             'title.min' => 'Il titolo non deve essere più corto di 10 caratteri.',
+            'description.required' => 'Inserisci una descrizione.', 
+            'description.max' => 'La descrizione deve avere minimo 10 caratteri.',
+            'thumb.required' => "Devi inserire il link di un'immagine.",
+            'thumb.max' => 'Il link non può conterenere più di 255 caratteri.',
+            'price.required' => 'Inserisci un prezzo.',
+            'series.required' => "Inserisci la serie di cui fa parte l'albo.",
+            'sale_date.required' => 'Inserisci una data.',
+            'type.required' => 'Inserisci il tipo di albo.',
         ])->validate();
 
         return $validator;
