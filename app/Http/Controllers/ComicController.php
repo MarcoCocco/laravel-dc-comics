@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -102,7 +103,7 @@ class ComicController extends Controller
     private function validation($request)
     {
 
-        $request->validate([
+      /*   $request->validate([
             'title' => 'required|max:150|min:10',
             'description' => 'required|min:10',
             'thumb' => 'required|max:255',
@@ -110,6 +111,25 @@ class ComicController extends Controller
             'series' => 'required|max:50',
             'sale_date' => 'required',
             'type' => 'required|max:20'
-        ]);
+        ]); */
+
+        $formData = $request->all();
+
+        $validator = Validator::make($formData, [
+            'title' => 'required|max:150|min:10',
+            'description' => 'required|min:10',
+            'thumb' => 'required|max:255',
+            'price' => 'required|max:10',
+            'series' => 'required|max:50',
+            'sale_date' => 'required',
+            'type' => 'required|max:20',
+        ], [
+            'title.required' => 'Inserisci un titolo.',
+            'title.max' => 'Il titolo non deve essere più lungo di 150 caratteri.',
+            'title.min' => 'Il titolo non deve essere più corto di 10 caratteri.',
+        ])->validate();
+
+        return $validator;
+
     }
 }
