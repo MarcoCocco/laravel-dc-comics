@@ -9,37 +9,79 @@
 
             <div class="col-md-6">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" id="title" name="title" class="form-control" value="{{ $comic->title }}">
+                <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror"
+                    value="{{ old('title') ?? $comic->title }}">
+                @error('title')
+                    <div class="invalid-feedback text-red">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="col-md-6">
                 <label for="description" class="form-label">Description</label>
-                <textarea id="description" name="description" class="form-control">{{ $comic->description }}</textarea>
+                <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror">{{ old('description') ?? $comic->description }}</textarea>
+                @error('description')
+                    <div class="invalid-feedback text-red">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="col-md-6">
                 <label for="thumb" class="form-label">Image Link</label>
-                <input type="text" id="thumb" name="thumb" class="form-control" value="{{ $comic->thumb }}">
+                <input type="text" id="thumb" name="thumb"
+                    class="form-control @error('thumb') is-invalid @enderror" value="{{ old('thumb') ?? $comic->thumb }}">
+                @error('thumb')
+                    <div class="invalid-feedback text-red">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="col-md-6">
                 <label for="price" class="form-label">U.S Price</label>
-                <input type="text" id="price" name="price" class="form-control" value="{{ $comic->price }}">
+                <input type="text" id="price" name="price"
+                    class="form-control @error('price') is-invalid @enderror" value="{{ old('price') ?? $comic->price }}">
+                @error('price')
+                    <div class="invalid-feedback text-red">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="col-md-6">
                 <label for="series" class="form-label">Series</label>
-                <input type="text" id="series" name="series" class="form-control" value="{{ $comic->series }}">
+                <input type="text" id="series" name="series"
+                    class="form-control @error('series') is-invalid @enderror" value="{{ old('series') ?? $comic->series }}">
+                @error('series')
+                    <div class="invalid-feedback text-red">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="col-md-6">
                 <label for="sale_date" class="form-label">On Sale Date</label>
-                <input type="date" id="sale_date" name="sale_date" class="form-control" value="{{ $comic->sale_date }}">
+                <input type="date" id="sale_date" name="sale_date"
+                    class="form-control @error('sale_date') is-invalid @enderror"
+                    value="{{ old('sale_date') ?? $comic->sale_date }}">
+                @error('sale_date')
+                    <div class="invalid-feedback text-red">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="col-md-6">
                 <label for="type" class="form-label">Type</label>
-                <input type="text" id="type" name="type" class="form-control" value="{{ $comic->type}}">
+                <input type="text" id="type" name="type" class="form-control @error('type') is-invalid @enderror"
+                    value="{{ old('type') ?? $comic->type }}">
+                @error('type')
+                    <div class="invalid-feedback text-red">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="col-12">

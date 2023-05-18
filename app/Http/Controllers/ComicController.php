@@ -109,7 +109,7 @@ class ComicController extends Controller
             'price' => 'required|max:10',
             'series' => 'required|max:50',
             'sale_date' => 'required',
-            'Type' => 'required|max:20'
+            'type' => 'required|max:20'
         ]);
     }
 }
